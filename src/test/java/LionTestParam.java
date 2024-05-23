@@ -31,7 +31,7 @@ public class LionTestParam {
     }
 
     @Test
-    public void getLionMale(){
+    public void getLionMane(){
         Assert.assertEquals(expected, lion.doesHaveMane());
     }
 

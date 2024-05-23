@@ -2,17 +2,18 @@ import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 
 public class LionTestExpection {
 
 
+    private static final String EXTENDID_ERROR = "Используйте допустимые значения пола животного - самей или самка";
     private Feline feline;
 
-    @Test(expected = Exception.class)
+    @Test
     public void exceptionMessageErrorTest() throws Exception {
-        new Lion("null", feline);
+        Exception exception = Assert.assertThrows(Exception.class,
+                () -> new Lion("null", feline));
+                Assert.assertEquals(EXTENDID_ERROR, exception.getMessage());
     }
 }

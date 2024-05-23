@@ -4,17 +4,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-
-    List<String> meatFood = List.of("Животные", "Птицы", "Рыба");
+    
     private Feline feline;
 
     @Before
@@ -25,7 +21,7 @@ public class FelineTest {
 
     @Test
     public void eatMeatTest() throws Exception {
-        List<String> animalGetFood = meatFood;
+        List<String> animalGetFood = feline.getFood("Хищник");
         Assert.assertEquals("Должно быть: Животные, Птицы, Рыба", animalGetFood, feline.eatMeat());
     }
 
@@ -37,8 +33,8 @@ public class FelineTest {
 
     @Test
     public void getKittensTest(){
-        int countKittens = feline.getKittens(2);
-        Assert.assertEquals(countKittens, feline.getKittens(2));
+        int countKittens = feline.getKittens(1);
+        Assert.assertEquals(countKittens, feline.getKittens());
     }
 
     @Test

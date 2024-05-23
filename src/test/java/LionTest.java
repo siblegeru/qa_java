@@ -1,4 +1,3 @@
-import com.example.Cat;
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
@@ -7,33 +6,40 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyInt;
+
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-    Lion lion;
 
+    private Lion lion;
     boolean hasMane;
     List<String> foodList = List.of("Животные", "Птицы", "Рыба");
 
     @Mock
     Feline feline;
+
     private String sex;
 
     @Before
-    public void setLion() throws Exception {
-         lion = new Lion(sex, feline);
+    public void setUp() throws Exception {
+        lion = new Lion("Самец", feline);
     }
 
-
     @Test
-    public void doesHaveManeTest(){
-        boolean actualResult = lion.doesHaveMane();
-        Assert.assertEquals(hasMane, actualResult);
+    public void doesHaveManeTestMan() throws Exception {
+        lion = new Lion("Самец", feline);
+        boolean actualResalt = lion.doesHaveMane();
+        Assert.assertEquals(true, actualResalt);
+
+    }
+    @Test
+    public void doesHaveManeTestGirl() throws Exception {
+        lion = new Lion("Самка", feline);
+        boolean actualResalt = lion.doesHaveMane();
+        Assert.assertEquals(false, actualResalt);
+
     }
 
     @Test

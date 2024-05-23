@@ -14,7 +14,7 @@ public class Lion {
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new IndexOutOfBoundsException("Используйте допустимые значения пола животного - самей или самка");
         }
     }
 
