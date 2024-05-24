@@ -14,32 +14,15 @@ import java.util.List;
 public class LionTest {
 
     private Lion lion;
-    boolean hasMane;
     List<String> foodList = List.of("Животные", "Птицы", "Рыба");
 
     @Mock
     Feline feline;
 
-    private String sex;
 
     @Before
     public void setUp() throws Exception {
         lion = new Lion("Самец", feline);
-    }
-
-    @Test
-    public void doesHaveManeTestMan() throws Exception {
-        lion = new Lion("Самец", feline);
-        boolean actualResalt = lion.doesHaveMane();
-        Assert.assertEquals(true, actualResalt);
-
-    }
-    @Test
-    public void doesHaveManeTestGirl() throws Exception {
-        lion = new Lion("Самка", feline);
-        boolean actualResalt = lion.doesHaveMane();
-        Assert.assertEquals(false, actualResalt);
-
     }
 
     @Test

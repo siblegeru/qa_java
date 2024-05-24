@@ -1,6 +1,5 @@
 import com.example.Feline;
 import com.example.Lion;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -8,13 +7,13 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class LionTest1 {
+public class LionHasManeTest {
     private final String sex;
     private final boolean expected;
     private Lion lion;
     private Feline feline;
 
-    public LionTest1(String sex, boolean expected) throws Exception {
+    public LionHasManeTest(String sex, boolean expected) throws Exception {
         this.sex = sex;
         this.expected = expected;
         this.feline = new Feline();
@@ -29,7 +28,7 @@ public class LionTest1 {
         };
     }
     @Test
-    public void lionMaleTest() {
+    public void lionManeTest() {
         assertEquals(expected, lion.doesHaveMane());
     }
 }

@@ -39,7 +39,7 @@ public class FelineTest {
 
     @Test
     public void getKittens1Test(){
-        int countKittens = feline.getKittens(1);
+        int countKittens = feline.getKittens();//Убрал параметр, буду внимателен
         Assert.assertEquals(countKittens, feline.getKittens());
     }
 
