@@ -34,7 +34,7 @@ public class FelineTest {
     @Test
     public void getKittensTest(){
         int countKittens = feline.getKittens(1);
-        Assert.assertEquals(countKittens, feline.getKittens());
+        Assert.assertEquals(feline.getKittens(), countKittens);
     }
 
     @Test
